@@ -1,0 +1,39 @@
+---
+title: "Selección del mejor medio de transporte para ir a la universidad"
+author: "Lucía García Infante"
+lang: es
+toc: true
+toc-depth: 4
+number-sections: True
+format:
+  html:
+    df-print: paged
+    code-tools: true
+  pdf: 
+    df-print: kable
+execute: 
+  echo: true
+  warning: false
+---
+
+
+```{r, include=FALSE}
+source("teoriadecision_funciones_incertidumbre.R")
+source("teoriadecision_funciones_multicriterio.R")
+source("teoriadecision_funciones_multicriterio_diagram.R")
+source("teoriadecision_funciones_multicriterio_utiles.R")
+source("teoriadecision_funciones_bayesiana.R")
+
+```
+
+\pagebreak
+
+# Presentación y motivación del problema.
+
+La mayoría de los alumnos que no residen en el campus de Reina Mercedes se enfrentan, especialmente durante su primer año de universidad, al mismo dilema: cómo desplazarse cada día a la facultad de la forma más eficiente posible. La elección del medio de transporte no es un problema poco importantes, ya que condiciona la puntualidad, el cansancio acumulado, los gastos mensuales e incluso el aprovechamiento del tiempo durante la jornada.
+
+Este también fue mi caso cuando comencé la carrera. Aunque un poco tarde, es ahora cuándo voy a poder resolverlo.  Vivo en Sevilla Este, concretamente en la urbanización Las Góndolas, una zona bien comunicada pero algo alejada de la Facultad de Matemáticas, situada en el campus de Reina Mercedes.
+
+De lunes a viernes debo realizar este trayecto, y con el tiempo he probado prácticamente todas las alternativas disponibles: coche, autobús (en diferentes combinaciones), bicicleta e incluso cercanías combinadas con un tramo a pie. Sin embargo, todas presentan alguna desventaja importante.
+
+Ante esta situación, he decidido analizar el problema desde un enfoque formal, aplicando métodos de decisión multicriterio para determinar, de manera objetiva y cuantitativa, cuál es la opción más adecuada considerando simultáneamente factores como tiempo, coste, comodidad, puntualidad y sostenibilidad ambiental. De este modo, este trabajo no solo busca resolver una necesidad personal, sino también ilustrar cómo la teoría de la decisión puede emplearse para abordar problemas cotidianos y relevantes para muchos estudiantes.
