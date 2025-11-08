@@ -16,7 +16,6 @@ execute:
   warning: false
 ---
 
-
 ```{r, include=FALSE}
 source("teoriadecision_funciones_incertidumbre.R")
 source("teoriadecision_funciones_multicriterio.R")
@@ -32,8 +31,38 @@ source("teoriadecision_funciones_bayesiana.R")
 
 La mayoría de los alumnos que no residen en el campus de Reina Mercedes se enfrentan, especialmente durante su primer año de universidad, al mismo dilema: cómo desplazarse cada día a la facultad de la forma más eficiente posible. La elección del medio de transporte no es un problema poco importantes, ya que condiciona la puntualidad, el cansancio acumulado, los gastos mensuales e incluso el aprovechamiento del tiempo durante la jornada.
 
-Este también fue mi caso cuando comencé la carrera. Aunque un poco tarde, es ahora cuándo voy a poder resolverlo.  Vivo en Sevilla Este, concretamente en la urbanización Las Góndolas, una zona bien comunicada pero algo alejada de la Facultad de Matemáticas, situada en el campus de Reina Mercedes.
+Este también fue mi caso cuando comencé la carrera. Aunque un poco tarde, es ahora cuándo voy a poder resolverlo. Vivo en Sevilla Este, concretamente en la urbanización Las Góndolas, una zona bien comunicada pero algo alejada de la Facultad de Matemáticas, situada en el campus de Reina Mercedes.
 
 De lunes a viernes debo realizar este trayecto, y con el tiempo he probado prácticamente todas las alternativas disponibles: coche, autobús (en diferentes combinaciones), bicicleta e incluso cercanías combinadas con un tramo a pie. Sin embargo, todas presentan alguna desventaja importante.
 
 Ante esta situación, he decidido analizar el problema desde un enfoque formal, aplicando métodos de decisión multicriterio para determinar, de manera objetiva y cuantitativa, cuál es la opción más adecuada considerando simultáneamente factores como tiempo, coste, comodidad, puntualidad y sostenibilidad ambiental. De este modo, este trabajo no solo busca resolver una necesidad personal, sino también ilustrar cómo la teoría de la decisión puede emplearse para abordar problemas cotidianos y relevantes para muchos estudiantes.
+
+\pagebreak
+
+# Presentación de los criterios.
+
+**- Tiempo de viaje**
+
+Este criterio representa la duración total del desplazamiento desde mi casa hasta la facultad, incluyendo posibles esperas, transbordos y problemas de tráfico. Es un factor fundamental, ya que condiciona mi organización diaria y también las horas de sueño. Se medirá en minutos por trayecto y mi objetivo es minimizarlo. 
+
+**-	Coste**
+
+El coste engloba todos los gastos asociados al trayecto de ida y vuelta diario. Se tendrán en cuenta el precio del billete de transporte público, el combustible y posibles pagos para el aparcamiento. Este criterio es especialmente relevante para mi ya que una opción demasiado cara puede resultar insostenible a largo plazo. Se medirá en euros y mi objetivo es minimizarlo.
+
+**- Comodidad**
+
+Mide el grado de bienestar físico durante el trayecto, así como a las condiciones del entorno y el esfuerzo necesario para realizarlo. He decidido desglosarlo en 2 subcriterios: 
+
+* Espacio personal disponible: si dispongo de espacio suficiente para viajar sentado o sin estar apretada.
+
+* Temperatura y condiciones meteorológicas: Combina la valoración del nivel de temperatura dentro del medio de transporte con la exposición a las condiciones meteorológicas externas, como lluvia, viento o calor intenso. Este subcriterio es especialmente relevante en Sevilla, donde hay altas temperaturas en verano.
+
+Para este criterio, voy a usar escalas subjetivas utilizando puntuaciones del 1 al 10. En el primer caso,  1 = viaje apretado, 10 = siempre sentado y amplio y en el segundo subcriterio, 1 = mala adaptabilidad a condiciones de lluvia y calor, 10 = temperatura agradable y con aire acondicionado. Mi objetivo es maximizarlo.
+
+**- Puntualidad**. 
+
+Mediré la capacidad del medio de transporte para cumplir los horarios previstos y mantener una regularidad en los desplazamientos. Un transporte puntual y predecible me permite mantener la planificación diaria y llevar una buena rutina de horarios. De nuevo, se medirá con una subjetiva, siendo 1: puntuabilidad mala y 10: siempre puntual.
+
+**- Sostenibilidad ambiental**
+
+Este criterio evalúa el impacto ecológico de cada medio de transporte de forma práctica y directa, considerando factores que afectan al entorno urbano y al bienestar colectivo. En lugar de medir emisiones exactas, utilizaré una escala de valoración de 1 a 19, donde 1 indica un alto impacto negativo y 10 indica una alternativa muy sostenible. Mi objetivo también es maximizarlo.
