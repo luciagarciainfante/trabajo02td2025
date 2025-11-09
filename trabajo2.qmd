@@ -47,13 +47,13 @@ Este criterio representa la duración total del desplazamiento desde mi casa has
 
 **-	Coste**
 
-El coste engloba todos los gastos asociados al trayecto de ida y vuelta diario. Se tendrán en cuenta el precio del billete de transporte público, el combustible y posibles pagos para el aparcamiento. Este criterio es especialmente relevante para mi ya que una opción demasiado cara puede resultar insostenible a largo plazo. Se medirá en euros y mi objetivo es minimizarlo.
+El coste engloba todos los gastos asociados al trayecto de ida y de vuelta. Se tendrán en cuenta el precio del billete de transporte público, el combustible y posibles pagos para el aparcamiento. Este criterio es especialmente relevante para mi ya que una opción demasiado cara puede resultar insostenible a largo plazo. Se medirá en euros y mi objetivo es minimizarlo.
 
 **- Comodidad**
 
 Mide el grado de bienestar físico durante el trayecto, así como a las condiciones del entorno y el esfuerzo necesario para realizarlo. He decidido desglosarlo en 2 subcriterios: 
 
-* Espacio personal disponible: si dispongo de espacio suficiente para viajar sentado o sin estar apretada.
+* Espacio personal disponible: si dispongo de espacio suficiente para viajar sentada o sin estar apretada.
 
 * Temperatura y condiciones meteorológicas: Combina la valoración del nivel de temperatura dentro del medio de transporte con la exposición a las condiciones meteorológicas externas, como lluvia, viento o calor intenso. Este subcriterio es especialmente relevante en Sevilla, donde hay altas temperaturas en verano.
 
@@ -61,8 +61,67 @@ Para este criterio, voy a usar escalas subjetivas utilizando puntuaciones del 1 
 
 **- Puntualidad**. 
 
-Mediré la capacidad del medio de transporte para cumplir los horarios previstos y mantener una regularidad en los desplazamientos. Un transporte puntual y predecible me permite mantener la planificación diaria y llevar una buena rutina de horarios. De nuevo, se medirá con una subjetiva, siendo 1: puntuabilidad mala y 10: siempre puntual.
+Mediré la capacidad del medio de transporte para cumplir los horarios previstos y mantener una regularidad en los desplazamientos. Un transporte puntual y predecible me permite mantener la planificación diaria y llevar una buena rutina de horarios. De nuevo, se medirá con una subjetiva, siendo 1: puntualidad mala y 10: siempre puntual.
 
 **- Sostenibilidad ambiental**
 
 Este criterio evalúa el impacto ecológico de cada medio de transporte de forma práctica y directa, considerando factores que afectan al entorno urbano y al bienestar colectivo. En lugar de medir emisiones exactas, utilizaré una escala de valoración de 1 a 19, donde 1 indica un alto impacto negativo y 10 indica una alternativa muy sostenible. Mi objetivo también es maximizarlo.
+
+
+\pagebreak
+
+# Presentación de las alternativas. 
+
+**- Coche.**
+
+La opción más rápida para ir en coche es coger la SE-30 y llegar por la Avenida de las Razas. El tiempo de viaje es un poco variado. En una situación ideal y sin tráfico, el tiempo de viaje es de unos 15 minutos. Sin embargo, por las mañanas suele haber bastante tráfico así que consideraré una media de 23 minutos.  
+
+En cuanto al coste, tendré en cuenta dos factores. En primer lugar la gasolina. 
+El precio de la gasolina ronda en unos 1.4 €/l en la gasolinera del Carrefour. 
+[Mi coche es un Toyota Corolla verso del 2002, que tiene un consumo de 7.4l/100km.
+](https://es.auto-abc.eu/info/consumo-real-combustible/Toyota-Corolla-Verso){target="_blank"}. Mi recorrido en coche es de 12.3 km. Por tanto, en gasolina, el precio es de 1.27€. 
+Además, tendré en cuenta que en alguna ocasión, hay que pagar el parking por no encontrar aparcamiento. Añado 2.5 euros por semana, es decir, 0.25€ por trayecto. 
+En total, ir un día a la universidad tiene un coste de 3.04€. 
+
+Sin duda, es la opción más cómoda ya que permite viajar sentado, con climatización y privacidad. Sin embargo, la puntualidad no siempre es constante, debido a los atascos frecuentes en las horas punta de entrada y salida de Sevilla.
+Desde el punto de vista de la sostenibilidad ambiental, es la alternativa menos favorable.
+
+![Trayecto en coche](imagenes/trayecto_coche.png){height=150}
+
+
+**-	Autobús. Combinación 27-02. **
+
+Esta opción requiere realizar una combinación de las líneas 27 y 02 de Tussam. Aproximadamente el trayecto tiene una duración de 55 minutos, pero debemos tener en cuenta que en ocasiones hay que esperar entre uno y otro. Por tanto, consideramos el tiempo del trayecto de 1h. 
+
+[El precio de cada billete es de 0.46€ considerando el caso de transbordo, por lo que a pesar de tener que coger dos autobuses, se paga solo en uno. 
+](https://www.tussam.es/es/titulos-de-viajes){target="_blank"}. Ir un día a la universidad tiene un coste de 0.92€. 
+
+La comodidad es bastante inferior, ya que suelen ir bastante llenos en horas puntas o incluso pasar completos y la puntualidad también mejorable.
+En términos de sostenibilidad ambiental, es una buena opción al transportar a varios pasajeros y reducir el número de vehículos individuales en circulación.
+
+
+**-	Autobús. Combinación TB1-LS. **
+Opción muy parecida a la anterior. Implica una combinación del nuevo "tranvibus" y la linea de autobús LS. La duración del trayecto es de unos 55 minutos y el coste es de 0.92€.
+La comodidad es buena ya que a pesar de ser transporte público son líneas mucho menos frecuentadas y con menos aglomeraciones. 
+La puntualidad y la sostenibilidad son buenas. 
+
+**- Bicicleta**
+El desplazamiento en bicicleta presenta una duración aproximada de 29 minutos, sin depender del tráfico ni tener que esperar colas.
+El coste diario es prácticamente nulo.
+En cuanto a comodidad, la valoración es muy baja: aunque ofrece autonomía y flexibilidad, puede resultar cansado en días de calor y no es viable en días de lluvia. Además requiere cierta preparación física.
+La puntualidad es alta, ya que el tiempo de llegada es estable y predecible.
+Desde el punto de vista de la sostenibilidad ambiental, la bicicleta es siempre la mejor opción, al no generar emisiones y promover un transporte limpio y saludable.
+
+![Trayecto en bicicleta](imagenes/trayecto_bicicleta.png){height=150}
+
+
+**-	Cercanías + caminar. **
+
+Esta opción combina el uso del cercanías y un tramo a pie hasta la facultad.
+Se coge la línea C4 en la estación "Palacio de Congresos" hasta "Virgen del Rocío". [Este trayecto dura 14 minutos. ](https://www.renfe.com/es/es/cercanias/cercanias-sevilla/lineas ){target="_blank"}. El tiempo caminando hasta la facultad es de 16min. Sin embargo, el trayecto de vuelta es diferente porque el cercanias es circular y el camino de "Virgen del Rocío" hasta "Palacio de Congresos" es de tan solo 8 minutos. Para considerar ambos, hago la media . Por tanto, el trayecto a la universidad es de 35 minutos considerando esperas (11 tren + 16 a pie + 8 espera). 
+[El coste diario es de 3.60€.
+. ](https://www.renfe.com/es/es/cercanias/cercanias-sevilla/tarifas/billetes ){target="_blank"}
+
+La comodidad es buena ya que los trenes suelen tener asientos, climatización y un trayecto estable pero la puntualidad del cercanías es muy mala porque a pesar de tener horario fijo, siempre se retrasa. La sostenibilidad también es buena. 
+
+
