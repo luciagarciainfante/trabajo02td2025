@@ -53,7 +53,7 @@ El coste engloba todos los gastos asociados al trayecto de ida y de vuelta. Se t
 
 Mide el grado de bienestar físico durante el trayecto, así como a las condiciones del entorno y el esfuerzo necesario para realizarlo. He decidido desglosarlo en 2 subcriterios: 
 
-* Espacio personal disponible: si dispongo de espacio suficiente para viajar sentada o sin estar apretada.
+* Espacio personal disponible y esfuerzo: si dispongo de espacio suficiente para viajar sentada o sin estar apretada y si supone mucho esfuerzo ese medio.
 
 * Temperatura y condiciones meteorológicas: Combina la valoración del nivel de temperatura dentro del medio de transporte con la exposición a las condiciones meteorológicas externas, como lluvia, viento o calor intenso. Este subcriterio es especialmente relevante en Sevilla, donde hay altas temperaturas en verano.
 
@@ -77,42 +77,37 @@ Este criterio evalúa el impacto ecológico de cada medio de transporte de forma
 La opción más rápida para ir en coche es coger la SE-30 y llegar por la Avenida de las Razas. El tiempo de viaje es un poco variado. En una situación ideal y sin tráfico, el tiempo de viaje es de unos 15 minutos. Sin embargo, por las mañanas suele haber bastante tráfico así que consideraré una media de 23 minutos.  
 
 En cuanto al coste, tendré en cuenta dos factores. En primer lugar la gasolina. 
-El precio de la gasolina ronda en unos 1.4 €/l en la gasolinera del Carrefour. 
-[Mi coche es un Toyota Corolla verso del 2002, que tiene un consumo de 7.4l/100km.
-](https://es.auto-abc.eu/info/consumo-real-combustible/Toyota-Corolla-Verso){target="_blank"}. Mi recorrido en coche es de 12.3 km. Por tanto, en gasolina, el precio es de 1.27€. 
-Además, tendré en cuenta que en alguna ocasión, hay que pagar el parking por no encontrar aparcamiento. Añado 2.5 euros por semana, es decir, 0.25€ por trayecto. 
-En total, ir un día a la universidad tiene un coste de 3.04€. 
+El precio de la gasolina ronda en unos 1.4 €/l en el Carrefour. [Mi coche es un Toyota Corolla verso del 2002, que tiene un consumo de 7.4l/100km.
+](https://es.auto-abc.eu/info/consumo-real-combustible/Toyota-Corolla-Verso){target="_blank"}. Mi recorrido en coche es de 12.3 km. Por tanto, en gasolina, el precio es de 1.27€. Además, tendré en cuenta que en alguna ocasión, hay que pagar el parking por no encontrar aparcamiento. Añado 2.5 euros por semana, es decir, 0.25€ por trayecto. En total, ir un día a la universidad tiene un coste de 3.04€. 
 
 Sin duda, es la opción más cómoda ya que permite viajar sentado, con climatización y privacidad. Sin embargo, la puntualidad no siempre es constante, debido a los atascos frecuentes en las horas punta de entrada y salida de Sevilla.
 Desde el punto de vista de la sostenibilidad ambiental, es la alternativa menos favorable.
 
-![Trayecto en coche](imagenes/trayecto_coche.png){height=150}
-
+![Trayecto en coche](imagenes/trayecto_coche.png){height=140}
 
 **-	Autobús. Combinación 27-02. **
 
-Esta opción requiere realizar una combinación de las líneas 27 y 02 de Tussam. Aproximadamente el trayecto tiene una duración de 55 minutos, pero debemos tener en cuenta que en ocasiones hay que esperar entre uno y otro. Por tanto, consideramos el tiempo del trayecto de 1h. 
+Esta opción requiere realizar una combinación de las líneas 27 y 02 de Tussam. Aproximadamente el trayecto tiene una duración de 55 minutos, pero debemos tener en cuenta que en ocasiones hay que esperar entre uno y otro. Consideramos el tiempo del trayecto de 1h. 
 
 [El precio de cada billete es de 0.46€ considerando el caso de transbordo, por lo que a pesar de tener que coger dos autobuses, se paga solo en uno. 
 ](https://www.tussam.es/es/titulos-de-viajes){target="_blank"}. Ir un día a la universidad tiene un coste de 0.92€. 
 
-La comodidad es bastante inferior, ya que suelen ir bastante llenos en horas puntas o incluso pasar completos y la puntualidad también mejorable.
+La comodidad es bastante inferior, ya que suelen ir bastante llenos en horas puntas o incluso pasar completos y la puntualidad también mejorable porque no tienen un horario fijo.
 En términos de sostenibilidad ambiental, es una buena opción al transportar a varios pasajeros y reducir el número de vehículos individuales en circulación.
 
 
 **-	Autobús. Combinación TB1-LS. **
+
 Opción muy parecida a la anterior. Implica una combinación del nuevo "tranvibus" y la linea de autobús LS. La duración del trayecto es de unos 55 minutos y el coste es de 0.92€.
-La comodidad es buena ya que a pesar de ser transporte público son líneas mucho menos frecuentadas y con menos aglomeraciones. 
-La puntualidad y la sostenibilidad son buenas. 
+La comodidad es buena ya que a pesar de ser transporte público son líneas mucho menos frecuentadas y con menos aglomeraciones. La puntuabilidad también es mejor por el mismo motivo. Misma valoración en cuanto a la sostenibilidad. 
+
 
 **- Bicicleta**
-El desplazamiento en bicicleta presenta una duración aproximada de 29 minutos, sin depender del tráfico ni tener que esperar colas.
-El coste diario es prácticamente nulo.
-En cuanto a comodidad, la valoración es muy baja: aunque ofrece autonomía y flexibilidad, puede resultar cansado en días de calor y no es viable en días de lluvia. Además requiere cierta preparación física.
-La puntualidad es alta, ya que el tiempo de llegada es estable y predecible.
-Desde el punto de vista de la sostenibilidad ambiental, la bicicleta es siempre la mejor opción, al no generar emisiones y promover un transporte limpio y saludable.
 
-![Trayecto en bicicleta](imagenes/trayecto_bicicleta.png){height=150}
+El desplazamiento en bicicleta presenta una duración aproximada de 29 minutos, sin depender del tráfico ni tener que esperar colas.
+El coste diario es prácticamente nulo. En cuanto a comodidad, la valoración es muy baja: aunque ofrece autonomía y flexibilidad, puede resultar cansado en días de calor y no es viable en días de lluvia. Además requiere cierta preparación física. La puntualidad es alta, ya que el tiempo de llegada es estable y predecible. Desde el punto de vista de la sostenibilidad ambiental, la bicicleta es siempre la mejor opción, al no generar emisiones y promover un transporte limpio y saludable.
+
+![Trayecto en bicicleta](imagenes/trayecto_bicicleta.png){height=140}
 
 
 **-	Cercanías + caminar. **
@@ -124,4 +119,97 @@ Se coge la línea C4 en la estación "Palacio de Congresos" hasta "Virgen del Ro
 
 La comodidad es buena ya que los trenes suelen tener asientos, climatización y un trayecto estable pero la puntualidad del cercanías es muy mala porque a pesar de tener horario fijo, siempre se retrasa. La sostenibilidad también es buena. 
 
+\pagebreak
 
+
+# Comparaciones por pares.
+
+Realizamos las tablas de comparaciones teniendo en cuenta la previa descripción de cada una de las alternativas.
+
+1. Matriz de comparación de criterios
+
+|        | Tiempo | Coste | Comodidad | Puntualidad | Sostenibilidad |
+|----------------------|:------:|:-----:|:----------:|:------------:|:--------------:|
+| **Tiempo**           | 1     | 3     | 2     | 4     | 8     |
+| **Coste**            | 1/3   | 1     | 1/2   | 1/3   | 6     |
+| **Comodidad**        | 1/2   | 2     | 1     | 5     | 8     |
+| **Puntualidad**      | 1/4   | 3     | 1/5   | 1     | 5     |
+| **Sostenibilidad**   | 1/8   | 1/6   | 1/8   | 1/5   | 1     |
+
+2. Matrices de comparación de los subcriterios de Comodidad.
+
+|         | Espacio Personal | Condiciones Meteorológicas |
+|----------------------------|:----------------:|:--------------------------:|
+| **Espacio Personal**       | 1   | 1/3   |
+| **Condiciones Meteorológicas** | 3 | 1   |
+
+
+3. Matriz de comparación dentro de Tiempo. 
+
+|          | Coche propio | Bus LE+02 | Bus TB1+LS | Bicicleta | Cercanías |
+|----------------------------|:-------------:|:----------:|:-----------:|:----------:|:--------------------:|
+| **Coche propio**           | 1   | 8   | 7   | 3   | 5   |
+| **Bus LE-02**              | 1/8 | 1   | 1/2 | 1/7 | 1/6 |
+| **Bus TB1+LS**             | 1/7 | 2   | 1   | 1/6 | 1/5 |
+| **Bicicleta**              | 1/3 | 7   | 6   | 1   | 3   |
+| **Cercanías**              | 1/5 | 6   | 5   | 1/3 | 1   |
+
+
+4. Matriz de comparación dentro de Coste.
+
+|          | Coche propio | Bus LE+02 | Bus TB1+LS | Bicicleta | Cercanías |
+|----------------------------|:-------------:|:----------:|:-----------:|:----------:|:--------------------:|
+| **Coche propio**           | 1   | 1/6 | 1/6 | 1/8 | 3   |
+| **Bus LE-02**              | 6   | 1   | 1   | 1/3 | 7   |
+| **Bus TB1+LS**             | 6   | 1   | 1   | 1/3 | 7   |
+| **Bicicleta**              | 8   | 3   | 3   | 1   | 9   |
+| **Cercanías**              | 1/3 | 1/7 | 1/7 | 1/9 | 1   |
+
+
+\pagebreak
+
+5. Matriz de comparación dentro de Espacio Personal y esfuerzo.
+
+
+|          | Coche propio | Bus LE+02 | Bus TB1+LS | Bicicleta | Cercanías |
+|----------------------------|:-------------:|:----------:|:-----------:|:----------:|:--------------------:|
+| **Coche propio**           | 1   | 6   | 5   | 9   | 7   |
+| **Bus LE-02**              | 1/6 | 1   | 1/2 | 6   | 3   |
+| **Bus TB1+LS**             | 1/5 | 2   | 1   | 8   |   4 |
+| **Bicicleta**              | 1/9 | 1/7 | 1/8 | 1   | 1/5 |
+| **Cercanías**              | 1/7 | 1/3 | 1/4 | 5   | 1   |
+
+
+6. Matriz de comparación dentro de Condiciones Metereologicas. 
+
+
+|          | Coche propio | Bus LE+02 | Bus TB1+LS | Bicicleta | Cercanías |
+|----------------------------|:-------------:|:----------:|:-----------:|:----------:|:--------------------:|
+| **Coche propio**           | 1   | 7   | 7   | 9   | 8   |
+| **Bus LE-02**              | 1/7 | 1   | 1   | 5   | 2   |
+| **Bus TB1+LS**             | 1/7 | 1   | 1   | 5   | 2   |
+| **Bicicleta**              | 1/9 | 1/5 | 1/5 | 1   | 1/6 |
+| **Cercanías**              | 1/8 | 1/2 | 1/2 | 6   | 1   |
+
+
+7. Matriz de comparación dentro de Puntualidad. 
+
+|          | Coche propio | Bus LE+02 | Bus TB1+LS | Bicicleta | Cercanías |
+|----------------------------|:-------------:|:----------:|:-----------:|:----------:|:--------------------:|
+| **Coche propio**           | 1   | 4   | 3   | 1/3 | 6   |
+| **Bus LE-02**              | 1/4 | 1   | 1/2 | 1/6 | 2   |
+| **Bus TB1+LS**             | 1/3 | 2   | 1   | 1/5 | 3   |
+| **Bicicleta**              |  3  | 1/6 | 5   | 1   | 8   |
+| **Cercanías**              | 1/6 | 1/2 | 1/3 | 1/8 | 1   |
+
+
+8. Matriz de comparación dentro de Sostenibilidad ambiental.
+
+
+|          | Coche propio | Bus LE+02 | Bus TB1+LS | Bicicleta | Cercanías |
+|----------------------------|:-------------:|:----------:|:-----------:|:----------:|:--------------------:|
+| **Coche propio**           | 1   | 1/5 | 1/5 | 1/7 | 1/6 |
+| **Bus LE-02**              | 5   | 1   | 1   | 1/3 | 1/4 |
+| **Bus TB1+LS**             | 5   | 1   | 1   | 1/3 | 1/4 |
+| **Bicicleta**              | 7   | 3   | 3   | 1   | 3   |
+| **Cercanías**              | 6   | 4   | 4   | 1/3 | 1   |
