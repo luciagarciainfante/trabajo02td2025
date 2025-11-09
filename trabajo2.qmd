@@ -60,7 +60,7 @@ Mide el grado de bienestar físico durante el trayecto, así como a las condicio
 
 * Temperatura y condiciones meteorológicas: Combina la valoración del nivel de temperatura dentro del medio de transporte con la exposición a las condiciones meteorológicas externas, como lluvia, viento o calor intenso. Este subcriterio es especialmente relevante en Sevilla, donde hay altas temperaturas en verano.
 
-Para este criterio, voy a usar escalas subjetivas utilizando puntuaciones del 1 al 10. En el primer caso,  1 = viaje apretado, 10 = siempre sentado y amplio y en el segundo subcriterio, 1 = mala adaptabilidad a condiciones de lluvia y calor, 10 = temperatura agradable y con aire acondicionado. Mi objetivo es maximizarlo.
+Para este criterio, voy a usar escalas subjetivas utilizando puntuaciones del 1 al 10. En el primer caso,  1 = viaje apretado, 10 = siempre sentado y amplio y en el segundo subcriterio, 1 = mala adaptabilidad a condiciones de lluvia y calor, 10 = mejor temperatura posible y con aire acondicionado. Mi objetivo es maximizarlo.
 
 **- Puntualidad**. 
 
@@ -352,4 +352,6 @@ round(pond.globales.parciales*100,2)
 
 
 \pagebreak
+
+# Método Electre
 

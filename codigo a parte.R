@@ -20,7 +20,7 @@ Calculate(datos)
 t1b = AnalyzeTable(datos, sort = "orig")
 formattable::as.htmlwidget(t1b)
 
-t2 = AnalyzeTable(datos, variable = "priority", sort = "orig")
+t2 = AnalyzeTable(datos, variable = "priority")
 formattable::as.htmlwidget(t2)
 
 
@@ -130,3 +130,65 @@ c(Inconsistencia0602b$mensaje, round(Inconsistencia0602b$RI.coef.inconsistencia,
 
 Inconsistencia0602c = multicriterio.metodoAHP.coef.inconsistencia(tb0602c)
 c(Inconsistencia0602c$mensaje, round(Inconsistencia0602c$RI.coef.inconsistencia,4) )
+
+
+## 3. Electre. 
+
+## PASO 1. METER LOS DATOS ---
+
+el1  = multicriterio.crea.matrizdecision(c(-23,-3.04,8,8,5,1,
+                                           -60,-0.92,4,6,2,4,
+                                           -55,-0.92,5,6,4,4,
+                                           -29,0,4,1,2,8,
+                                           -35,-3.6,2,3,1,5), 
+                                         numalternativas = 5,
+                                         numcriterios = 6, )
+el1
+
+
+## ITERACION 1 --- 
+## Aplicamos el método electre una vez.
+sal7 = multicriterio.metodoELECTRE_I(el1,
+                                     pesos.criterios = crisub,
+                                     nivel.concordancia.minimo.alpha = 0.7,
+                                     no.se.compensan =c(50, 4, 7, 7, 7, 7),
+                                     que.alternativas = TRUE)  #Se usan todas
+
+sal7  #Con este objeto podemos ver todo el camino del método
+str(sal7)
+sal7$relacion.dominante
+qgraph::qgraph(sal7$relacion.dominante)
+sal7$nucleo_aprox
+
+
+## ITERACION 2 --- 
+## Aplicamos el método electre una vez.
+sal7b = multicriterio.metodoELECTRE_I(el1,
+                                     pesos.criterios = crisub,
+                                     nivel.concordancia.minimo.alpha = 0.7,
+                                     no.se.compensan =c(50, 4, 7, 7, 7, 7),
+                                     que.alternativas = c(1,4))  #Se usan todas
+
+sal7b  #Con este objeto podemos ver todo el camino del método
+str(sal7b)
+sal7b$relacion.dominante
+qgraph::qgraph(sal7b$relacion.dominante)
+sal7b$nucleo_aprox
+
+
+
+## ITERACION 3 --- 
+## Aplicamos el método electre una vez.
+sal7b3 = multicriterio.metodoELECTRE_I(el1,
+                                      pesos.criterios = crisub,
+                                      nivel.concordancia.minimo.alpha = 0.55,
+                                      no.se.compensan =c(50, 4, 8, 8, 8, 8),
+                                      que.alternativas = c(1,4))  #Se usan todas
+
+sal7b3  #Con este objeto podemos ver todo el camino del método
+str(sal7b3)
+sal7b3$relacion.dominante
+qgraph::qgraph(sal7b3$relacion.dominante)
+sal7b3$nucleo_aprox
+
+
