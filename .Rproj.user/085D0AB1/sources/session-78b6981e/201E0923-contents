@@ -1,0 +1,130 @@
+#############  EJERCICIO 7.  RELACIÓN 2
+## ELECTRE. 5 CRITERIOS Y 5 ALTERNATIVAS
+
+rm(list=ls())
+
+source("teoriadecision_funciones_multicriterio.R")
+source("teoriadecision_funciones_multicriterio_utiles.R")
+
+
+################### PARTE 1. ELECTRE ----
+
+## PASO 1. METER LOS DATOS ---
+## OJO!!! Como el ultimo criterio es de minimizar, le cambiamos el signo y ya 
+# lo tratamos igual que al resto
+
+p7 = multicriterio.crea.matrizdecision(c(100,15,7,40,-50,
+                                         200,25,7,60,-200,
+                                         100,20,4,25,-25,
+                                         200,30,20,70,-350,
+                                         250,25,15,100,-500),
+                                       numalternativas = 5,
+                                       numcriterios = 5)
+p7
+
+
+## ITERACION 1 --- 
+## Aplicamos el método electre una vez.
+sal7 = multicriterio.metodoELECTRE_I(p7,
+                                     pesos.criterios = c(0.25, 0.25, 0.2, 0.2, 0.2),
+                                     nivel.concordancia.minimo.alpha = 0.7,
+                                     no.se.compensan = c(60, Inf, 4, Inf, Inf),
+                                     que.alternativas = TRUE)  #Se usan todas
+
+sal7  #Con este objeto podemos ver todo el camino del método
+str(sal7)
+sal7$relacion.dominante
+
+## El resultado del metodo electre se puede resumir con el siguiete grafo:
+qgraph::qgraph(sal7$relacion.dominante)
+
+## Nuestro objetivo es encontrar la mejor alternativa (encontrar un núcleo de un
+# solo elemento).
+## RECORD. Núcleo: Conjunto de alternativas que dominan al resto y que 
+# no son dominadas por ninguna. 
+
+sal7$nucleo_aprox
+# Vemos que el nucleo esta formado por a4 y a5. Pero ojo, sigue teniendo dos alternativas.
+# Para solucionarlo: 
+# - Volvemos a hacer electre solo con las alternativas que nos han aparecido 
+# en el metodo del nucleo.
+# - Mover los umbrales, ie, las exigencias (subir el alpha o el di)
+# Ojo!! alpha es un valor: [0.5 , 1)
+
+
+## ITERACION 2: ----
+# Repito electre sobre las alternativas a4 y a5
+
+sal7b = multicriterio.metodoELECTRE_I(p7,
+                                      pesos.criterios = c(0.25, 0.25, 0.2, 0.2, 0.2),
+                                      nivel.concordancia.minimo.alpha = 0.7,
+                                      no.se.compensan = c(60, Inf, 4, Inf, Inf),
+                                      que.alternativas = c(4,5))
+
+qgraph::qgraph(sal7b$relacion.dominante)
+sal7b$nucleo_aprox
+
+# De nuevo, nos seguimos quedando con el mismo nucleo
+
+
+## ITERACION 3 ---
+# Nos quedamos con las alternativas vivas y cambiamos el valor de alpha, a ver que pasa
+
+sal7c = multicriterio.metodoELECTRE_I(p7,
+                                      pesos.criterios = c(0.25, 0.25, 0.2, 0.2, 0.2),
+                                      nivel.concordancia.minimo.alpha = 0.55,
+                                      no.se.compensan = c(60, Inf, 4, Inf, Inf),
+                                      que.alternativas = c(4,5))
+
+
+qgraph::qgraph(sal7c$relacion.dominante)
+sal7c$nucleo_aprox
+
+# Ahora la alternativa 4 domina a la 5. 
+#CONCLUSION: NOS QUEDAMOS CON LA ALTERNATIVA 4
+
+
+
+################### PARTE 2. CÁLCULOS INTERNOS ELECTRE ----
+
+## Ojo, tb lo puedo ver con las funciones de antes.
+sal7$Imas
+sal7$Imenos
+sal7$Iigual
+sal7$test.concordancia
+sal7$test.discordancia
+sal7$relacion.dominante
+
+
+r7 = func_ELECTRE_Completo(sal7)
+
+
+## 1. Tablas de los indices (I+, I=, I-)
+r7$MIndices$KE     
+#r7$MIndices$KE %>% save_kable("test.png")   #Para salida pdf/html
+#include_graphics("test.png")   #Para salida pdf y html
+
+## 2. Tabla de concordancia
+r7$TConcordancia$KE
+#r7$TConcordancia$KE %>% save_kable("test2.png")
+# include_graphics("test2.png")
+
+
+## 3. Tabla de discordancia
+r7$TDiscordancia$KE
+r7$TDiscordancia$KE %>% save_kable("test3.png")
+include_graphics("test3.png")
+
+
+## 4. Pasa el test de superación (los dos test):
+r7$TSuperacion$KE
+#r7$TSuperacion$KE %>% save_kable("test4.png")
+#include_graphics("test4.png")
+
+
+#Por lo tanto:
+r7$Grafo
+qgraph::qgraph(r7$Grafo)
+r7$Nucleo
+
+

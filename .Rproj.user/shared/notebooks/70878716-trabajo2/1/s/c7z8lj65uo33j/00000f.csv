@@ -1,0 +1,3 @@
+"0","Calculate(datos)"
+"0","t1 = AnalyzeTable(datos, sort = ""orig"")"
+"0","formattable::as.htmlwidget(t1)"

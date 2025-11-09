@@ -1,0 +1,44 @@
+#############  EJERCICIO EXTRA. AHP MULTINIVEL 
+## ENUNCIADO PDF2
+
+rm(list=ls())
+
+source("teoriadecision_funciones_multicriterio.R")
+source("teoriadecision_funciones_multicriterio_diagram.R")
+source("teoriadecision_funciones_multicriterio_utiles.R")
+library(formattable)
+library(htmltools)
+library(webshot2)
+library(ahp)
+
+
+########################################
+#APARTADO A: Libreria AHP:----
+########################################
+
+## 1. Cargo los datos 
+dtmul = Load("ahpmultinivel.ahp")
+dtmul
+#tenemos criterios y subcriterios
+
+## 2. Calcula los pesos locales y globales del modelo cargado.  
+# Usa el metodo del autov ppal. Devuelve los normalizados. Añade los resultados 
+# a datos
+Calculate(dtmul)
+print(dtmul, priority = function(x) x$parent$priority["Total", x$name])
+
+## 3. Diagrama jerárquico
+Visualize(dtmul)
+
+## 4. Tabla resumen con los pesos globales. 
+# OJO. Usamos AnalyzeTable que es una versión mejorada.
+t1 = AnalyzeTable(dtmul)
+formattable::as.htmlwidget(t1)
+
+t1b = AnalyzeTable(dtmul, sort = "orig")
+formattable::as.htmlwidget(t1b)
+
+## 4. Tabla resumen con los pesos locales 
+t2 = AnalyzeTable(dtmul, variable = "priority", sort = "orig")
+formattable::as.htmlwidget(t2)
+
