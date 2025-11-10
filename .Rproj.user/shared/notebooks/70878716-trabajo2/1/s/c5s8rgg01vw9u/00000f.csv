@@ -1,2 +1,0 @@
-"0","t2 = AnalyzeTable(datos, variable = ""priority"", sort = ""orig"")"
-"0","formattable::as.htmlwidget(t2)"
