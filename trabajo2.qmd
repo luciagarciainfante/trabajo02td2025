@@ -32,7 +32,7 @@ library(ahp)
 
 # Presentación y motivación del problema.
 
-La mayoría de los alumnos que no residen en el campus de Reina Mercedes se enfrentan, especialmente durante su primer año de universidad, al mismo dilema: cómo desplazarse cada día a la facultad de la forma más eficiente posible. La elección del medio de transporte no es un problema poco importantes, ya que condiciona la puntualidad, el cansancio acumulado, los gastos mensuales e incluso el aprovechamiento del tiempo durante la jornada.
+La mayoría de los alumnos que no residen en el campus de Reina Mercedes se enfrentan, especialmente durante su primer año de universidad, al mismo dilema: cómo desplazarse cada día a la facultad de la forma más eficiente posible. La elección del medio de transporte no es un problema poco importante, ya que condiciona la puntualidad, el cansancio acumulado, los gastos mensuales e incluso el aprovechamiento del tiempo durante la jornada.
 
 Este también fue mi caso cuando comencé la carrera. Aunque un poco tarde, es ahora cuándo voy a poder resolverlo. Vivo en Sevilla Este, concretamente en la urbanización Las Góndolas, una zona bien comunicada pero algo alejada de la Facultad de Matemáticas, situada en el campus de Reina Mercedes.
 
@@ -60,15 +60,15 @@ Mide el grado de bienestar físico durante el trayecto, así como a las condicio
 
 -   Temperatura y condiciones meteorológicas: Combina la valoración del nivel de temperatura dentro del medio de transporte con la exposición a las condiciones meteorológicas externas, como lluvia, viento o calor intenso. Este subcriterio es especialmente relevante en Sevilla, donde hay altas temperaturas en verano.
 
-Para este criterio, voy a usar escalas subjetivas utilizando puntuaciones del 1 al 10. En el primer caso, 1 = viaje apretado, 10 = siempre sentado y amplio y en el segundo subcriterio, 1 = mala adaptabilidad a condiciones de lluvia y calor, 10 = mejor temperatura posible y con aire acondicionado. Mi objetivo es maximizarlo.
+Para este criterio, voy a usar escalas subjetivas utilizando puntuaciones del 1 al 10. En el primer caso, 1 = viaje muy apretado e incomodo, 10 = siempre sentado y amplio y en el segundo subcriterio, 1 = mala adaptabilidad a condiciones de lluvia y calor, 10 = mejor temperatura posible y sin problemas con el tiempo. Mi objetivo es maximizarlo.
 
 **- Puntualidad**.
 
-Mediré la capacidad del medio de transporte para cumplir los horarios previstos y mantener una regularidad en los desplazamientos. Un transporte puntual y predecible me permite mantener la planificación diaria y llevar una buena rutina de horarios. De nuevo, se medirá con una subjetiva, siendo 1: puntualidad mala y 10: siempre puntual.
+Mediré la capacidad del medio de transporte para cumplir los horarios previstos y mantener una regularidad en los desplazamientos. Un transporte puntual y predecible me permite mantener la planificación diaria y llevar una buena rutina de horarios. De nuevo, se medirá con una subjetiva, siendo 1: puntualidad mala y 10: siempre puntual. Mi objetivo es maximizarlo.
 
 **- Sostenibilidad ambiental**
 
-Este criterio evalúa el impacto ecológico de cada medio de transporte de forma práctica y directa, considerando factores que afectan al entorno urbano y al bienestar colectivo. En lugar de medir emisiones exactas, utilizaré una escala de valoración de 1 a 19, donde 1 indica un alto impacto negativo y 10 indica una alternativa muy sostenible. Mi objetivo también es maximizarlo.
+Este criterio evalúa el impacto ecológico de cada medio de transporte de forma práctica y directa, considerando factores que afectan al entorno urbano y al bienestar colectivo. En lugar de medir emisiones exactas, utilizaré una escala de valoración de 1 a 10, donde 1 indica un alto impacto negativo y 10 indica una alternativa muy sostenible. Mi objetivo también es maximizarlo.
 
 \pagebreak
 
@@ -84,9 +84,9 @@ Sin duda, es la opción más cómoda ya que permite viajar sentado, con climatiz
 
 ![Trayecto en coche](imagenes/trayecto_coche.png){height="140"}
 
-**- Autobús. Combinación 27-02.**
+**- Autobús. Combinación LE-02.**
 
-Esta opción requiere realizar una combinación de las líneas 27 y 02 de Tussam. Aproximadamente el trayecto tiene una duración de 55 minutos, pero debemos tener en cuenta que en ocasiones hay que esperar entre uno y otro. Consideramos el tiempo del trayecto de 1h.
+Esta opción requiere realizar una combinación de las líneas LE y 02 de Tussam. Aproximadamente el trayecto tiene una duración de 55 minutos, pero debemos tener en cuenta que en ocasiones hay que esperar entre uno y otro. Consideramos el tiempo del trayecto de 1h.
 
 [El precio de cada billete es de 0.46€ considerando el caso de transbordo, por lo que a pesar de tener que coger dos autobuses, se paga solo en uno.](https://www.tussam.es/es/titulos-de-viajes){target="_blank"}. Ir un día a la universidad tiene un coste de 0.92€.
 
@@ -379,26 +379,31 @@ Podemos destacar que el valor del coeficiente de inconsistencia de la tabla de l
 
 # Método Electre
 
-Para aplicar el método Electre, es necesario construir una matriz de decisión que contenga los valores de cada alternativa en relación con cada criterio. Los valores correspondientes a Coste y Tiempo se presentaron previamente en la descripción de las alternativas. También se comentó que el resto de criterios se valoran de forma subjetiva, aunque manteniendo coherencia y proporcionalidad entre ellos según las características de cada medio de transporte. Además, dado que Coste y Tiempo son criterios a minimizar, sus valores se introdujeron con signo negativo.
+Para aplicar el método Electre, es necesario construir una matriz de decisión que contenga los valores de cada alternativa en relación con cada criterio. Los valores correspondientes a Coste y Tiempo se presentaron previamente en la descripción de las alternativas. También se comentó que el resto de criterios se valoran de forma subjetiva, aunque manteniendo coherencia y proporcionalidad entre ellos según las características de cada medio de transporte. Además, dado que Coste y Tiempo son criterios a minimizar, sus valores se introdujeron con signo negativo. Para los pesos de los criterios usamos los calculados en el apartado de AHP. 
 
 Así, lo primero que tenemos que hacer es meter los datos:
 ```{r}
+nalt = c("Coche", "Bus1", "Bus2", "Bici", "Cercanias")
+ncri = c("Tiempo", "Coste", "Esp", "Meteor.", "Punt.", "Sost.")
+
 el1  = multicriterio.crea.matrizdecision(c(-23,-3.04,8,8,5,1,
                                            -60,-0.92,4,5,2,3,
                                            -55,-0.92,5,5,3,3,
                                            -29,0,4,1,8,7,
                                            -35,-3.6,2,3,1,5), 
                                          numalternativas = 5,
-                                         numcriterios = 6, )
+                                         numcriterios = 6,
+                                         v.nombresalt = nalt,
+                                         v.nombrescri = ncri)
 el1
 ```
 
 
 Ahora aplicamos el método electre una vez. Para ello, usamos como mínimo valor de concordancia 0'7. Además, determinamos los umbrales de discordancia. 
 
-- En el criterio de tiempo, no se compensarán, en el test de discordancia, alternativas con más de 10 unidades de diferencia. 
+- En el criterio de tiempo, no se compensarán, en el test de discordancia, alternativas con más de 10 minutos de diferencia. 
 
-- En el criterio de coste, no se compensarán, en el test de discordancia, alternativas con más de 1 euro unidades de diferencia. 
+- En el criterio de coste, no se compensarán, en el test de discordancia, alternativas con más de 1 euro de diferencia. 
 
 ```{r}
 it1 = multicriterio.metodoELECTRE_I(el1,
@@ -413,11 +418,10 @@ it1$nucleo_aprox
 
 ```
 
-::: callout-tip
-### Nota:
-Tras aplicar el método electre una vez y viendo el grafo, sabemos que las alternativas del núcleo son la a1 y la a4, correspondientes al Coche y la bicicleta. Sin embargo, seguimos teniendo dos alternativas y nuestro objetivo es quedarnos solo con una. 
-Para ello, podemos repetir el método pero sólo con las alternativas a1 y a4. 
-::: 
+
+Tras aplicar el método electre una vez y viendo el grafo, sabemos que las alternativas del núcleo son el Coche y la bicicleta. Sin embargo, seguimos teniendo dos alternativas y nuestro objetivo es quedarnos solo con una. 
+Para ello, podemos repetir el método pero sólo con esas alternativas. 
+
 
 ```{r}
 it2 = multicriterio.metodoELECTRE_I(el1,
@@ -432,10 +436,8 @@ qgraph::qgraph(it2$relacion.dominante)
 ```
 
 
-::: callout-tip
-### Nota:
 Seguimos teniendo el mismo núcleo. Voy a bajar el nivel mínimo de concordancia. 
-::: 
+
 
 ```{r}
 
@@ -448,27 +450,185 @@ it3 = multicriterio.metodoELECTRE_I(el1,
 qgraph::qgraph(it3$relacion.dominante)
 ```
 
-::: callout-tip
-### Nota:
+
 Seguimos teniendo el mismo núcleo. Voy a subir los umbrales de discordancia. 
-:::
+
 
 ```{r}
 it4 = multicriterio.metodoELECTRE_I(el1,
                                     pesos.criterios = crisub,
                                     nivel.concordancia.minimo.alpha = 0.55,
-                                    no.se.compensan =c(15, 4, Inf, Inf, Inf, Inf),
+                                    no.se.compensan =
+                                      c(15, 4, Inf, Inf, Inf, Inf),
                                     que.alternativas = c(1,4))  
 qgraph::qgraph(it4$relacion.dominante)
-it4$nucleo_aprox
 ```
 
-::: callout-tip
-### Nota:
-Ahora sí podemos concluir que la alternativa 1, domina a la 4. Por tanto, el mejor medio de transporte para ir a la universidad es el coche.
-:::
+
+Ahora sí podemos concluir que el coche domina a la bici. Por tanto, el mejor medio de transporte para ir a la universidad es el coche.
 
 
 \pagebreak
 
 # Método Promethee.
+
+A continuación usaremos los métodos Promethee para ordenar las alternativas y obtener la mejor solución.
+
+Para aplicar este método se necesita una matriz de decisión, que en este caso será la misma que usamos en Electre. Los pesos de los criterios serán los obtenidos por AHP (crisub), ya que suman 1 y se pueden usar directamente.
+
+Para cada criterio vamos a usar una función de preferencia distinta:
+
+- Tiempo: función Cuasi-Criterio, q = 10.
+
+- Coste: función preferencia lineal, p = 30.
+
+- Espacio y esfuerzo: función Pref. Lineal Indiferencia, q = 0.5, p = 5
+
+- Condiciones meteorológicas: función nivel, q = 1, p = 6.
+
+- Puntualidad: función usual. 
+
+- Sostenibilidad ambiental: función gaussiana, s = 5.
+
+
+Metemos esta información en una matriz:
+
+```{r}
+#                  num fun  q    p   s
+tab.fpref = matrix( c(2,   10,   1,  0,
+                      3,    0,  30,  0,
+                      5,   0.5,  5,  0,
+                      4,    1,   6,  0,
+                      1,    0,   1,  0,
+                      6,    0,   1,  5),
+                    ncol=4,byrow=TRUE)
+
+```
+
+## Promethee I
+Para cada par de alternativas, se calcula un índice de preferencia que indica el grado en que una opción supera a otra, generando flujos entrante y saliente. A partir de estos flujos, se distinguen las alternativas preferidas, indiferentes o incomparables.
+
+```{r}
+tab.Pthee.i = multicriterio.metodo.promethee_i(el1,crisub,tab.fpref)
+tab.Pthee.i
+```
+
+::: callout-tip
+### Conclusiones :
+La tabla de relaciones de superación indica con un 1 cuándo una alternativa supera a otra. En nuestro caso, el coche domina a todas las demás, siendo claramente la preferida. La combinación de autobuses LE y 02 es la peor ya que no domina a ninguna pero sí es dominada. 
+La segunda combinación de autobuses domina a la primera y el cercanias domina a ambas.
+Por último la bicicleta se encuetra detrás del coche dominando a todas menos a él. \vspace{0.5cm}
+
+La alternativa dominante, el coche, se confirma también al presentar el mayor flujo entrante y el menor flujo saliente, lo que refleja su poder de dominio sobre el resto. \vspace{0.5cm}
+
+En este caso no existen alternativas indiferentes, ya que ninguna pareja presenta flujos entrantes y salientes idénticos. Además tampoco hay ninguna incomparable porque ninguna de las parejas tiene mayor flujo entrante y saliente a la vez.  
+::: 
+
+
+
+```{r}
+require(qgraph)
+qgraph(tab.Pthee.i$tablarelacionsupera)
+```
+Con la gráfica también pueden verse estas relaciones. Claramente el coche domina a todas puesto que hay una flecha hacia cada una de las alternativas. 
+
+## Promethee II
+
+Promethee II proporciona un orden total de las alternativas basándose en los flujos netos.
+
+```{r}
+tab.Pthee.ii = multicriterio.metodo.promethee_ii(el1,crisub,tab.fpref)
+tab.Pthee.ii
+```
+::: callout-tip
+### Conclusiones :
+En este caso es más fácil extraer las conclusiones. Coche (2.22) y Bici (1.12) son las mejores, teniendo flujos netos positivos, es decir, dominan a más alternativas de las que son dominadas. Sin embargo, las combinaciones de buses son las peores. La opción del Cercanías queda intermedia (-0.63). Por lo tanto, el Coche sería la opción preferida, al igual que ha salido en el resto de métodos. 
+::: 
+
+```{r}
+require(qgraph)
+qgraph(tab.Pthee.ii$tablarelacionsupera)
+```
+El grafo muestra las mismas conclusiones. 
+
+\vspace{0.5cm}
+
+## Promethee con Windows. 
+
+```{r}
+res = multicriterio.metodo.promethee_windows(el1, tab.fpref, crisub)
+res$Acciones
+
+```
+También podríamos ver el escenario ($Escenario) pero a partir de esta tabla podemos obtener todas las conclusiones. 
+
+::: callout-tip
+### Conclusiones:  
+Fijándonos en el flujo neto, vemos que la ordenación vuelve a ser la misma. Además también mantiene el signo, siendo coche y bici positivos y el resto negativos. Sin embargo, los valores de los flujos cambian con respecto a los valores anteriores. 
+::: 
+
+
+\pagebreak
+
+# Método Axiomático de Arrow y Raymond.
+
+## Aplicación del método
+```{r}
+sejarrow = multicriterio.metodoaxiomatico.ArrowRaymond(el1)
+sejarrow$alternativasordenadas
+```
+
+::: callout-tip
+### Conclusiones:  
+Aplicando Arrow y Raymond vemos que Bici es la alternativa más fuerte, seguida de Coche, Bus2, Bus1 y, finalmente, Cercanías como la menos preferida. Esto me parece sorprendente debido a que es el primer método en el que sale bicicleta como la mejor opción. Sin embargo, en todos se mantiene aproximadamente el mismo orden siendo bici y coche las mejores. 
+::: 
+
+## Aplicación a análisis de sensibilidad. 
+
+Vamos a ver como cambian los resultados finales si voy modificando las valoraciones
+de la primera alternativa en todos los criterios. Volvemos a usar la matriz de decisión de siempre. 
+
+```{r}
+
+intalpha = seq(1,2,0.1) #Vector de números del 1 al 2, con incrementos de 0.1.
+sols = vector("list",length(intalpha))  
+
+# Para cada valor de alpha:
+for (i in 1:length(intalpha)) {
+  pej7_i = el1   #vuelvo a copiar la matriz original
+  pej7_i[1,] = pej7_i[1,] * intalpha[i]    #modifico la fila 1  
+  sej7_i = multicriterio.metodoaxiomatico.ArrowRaymond(pej7_i)  # Aplico el metodo
+  sols[[i]] = sej7_i$alternativasordenadas    #Guardo el resultado de cada matriz
+}
+sols
+
+#veamos las posiciones de a1 en este bucle:
+posiciones_a1 = rep(NA,length(intalpha)) 
+
+for (i in 1:length(intalpha)) {
+  #i = 1
+  posiciones_a1[i] = which(sols[[i]]=="Coche") 
+}
+posiciones_a1
+
+#lo representamos con un plot:
+plot(intalpha,posiciones_a1,type= "l")
+
+```
+::: callout-tip
+### Conclusiones: 
+Los resultados muestran que, incluso tras aumentar progresivamente las puntuaciones de “Coche”, el orden final de las alternativas no cambia: en todos los casos, el ranking se mantiene como Bici > Coche > Bus2 > Bus1 > Cercanías. Esto indica que el método es robusto y estable frente a variaciones moderadas en las valoraciones de una alternativa.
+::: 
+
+
+\pagebreak
+
+# Conclusión final.
+
+En conjunto, los diferentes métodos de decisión multicriterio aplicados presentan resultados coherentes, aunque con ciertas variaciones en el orden de preferencia de las alternativas. 
+
+En la mayoría de los casos, el coche aparece como una de las opciones más ventajosas: ocupa la primera posición tanto en el **AHP** como en **ELECTRE** y **PROMETHEE**. Sin embargo, el **método de Arrow y Raymond** situa a la **bici** como la mejor alternativa.
+
+En general, hay una clara preferencia por el coche y la bici frente al resto de opciones. Las alternativas como Bus1 y Cercanías tienden a ocupar las posiciones inferiores en casi todos los métodos, lo que indica un menor rendimiento global. Por tanto, aunque la elección final podría depender del método empleado, los resultados apuntan a que Coche y Bici son las mejores opciones. Además, es interesante ver como suele presentarse la opción que incluye el tranvibus por encima de la otra combinación de autobuses, lo que nos permite ver que sí que conlleva mejoras. 
+
+Por tanto, a partir de ahora iré en coche a la universidad. 

@@ -9,7 +9,7 @@ library(webshot2)
 library(ahp)
 
 
-## 1. AHP con libreria 
+## 1. AHP con libreria  ----
 #ahp::RunGUI()
 
 datos = Load("transporte.ahp")
@@ -24,7 +24,7 @@ t2 = AnalyzeTable(datos, variable = "priority")
 formattable::as.htmlwidget(t2)
 
 
-## 2. AHP con R. 
+## 2. AHP con R. ----
 #Criterios
 n.criterios = c("Tiempo","Coste","Comodidad","Puntualidad","Sostenibilidad")
 tn1 = multicriterio.crea.matrizvaloraciones_mej(c(3,2,4,8,1/2,1/3,6,2,8,5),
@@ -154,7 +154,7 @@ c(Inconsistenciac5$mensaje, round(Inconsistenciac5$RI.coef.inconsistencia,4) )
 
 
 
-## 3. Electre. 
+## 3. Electre. ----
 
 ## PASO 1. METER LOS DATOS ---
 
@@ -209,7 +209,7 @@ sal7b3$nucleo_aprox
 
 
 
-## ITERACION 4 --- 
+## ITERACION 4
 ## Aplicamos el método electre una vez.
 sal7b4 = multicriterio.metodoELECTRE_I(el1,
                                        pesos.criterios = crisub,
@@ -220,4 +220,45 @@ sal7b4 = multicriterio.metodoELECTRE_I(el1,
 sal7b4  #Con este objeto podemos ver todo el camino del método
 qgraph::qgraph(sal7b4$relacion.dominante)
 sal7b4$nucleo_aprox
+
+
+## 4. Método promethee ----
+
+#                  num fun  q    p   s
+tab.fpref = matrix( c(2,   10,   1,  0,
+                      3,    0,  30,  0,
+                      5,   0.5,  5,  0,
+                      4,    1,   6,  0,
+                      1,    0,   1,  0,
+                      6,    0,   1,  5),
+                    ncol=4,byrow=TRUE)
+
+
+## 4.1. PROMETHEE 1
+
+tab.Pthee.i = multicriterio.metodo.promethee_i(el1,crisub,tab.fpref)
+tab.Pthee.i
+
+require(qgraph)
+qgraph(tab.Pthee.i$tablarelacionsupera)
+
+## 4.2. PROMETHEE 2 
+tab.Pthee.ii = multicriterio.metodo.promethee_ii(tabdec.X,pesos.criterios,tab.fpref)
+tab.Pthee.ii
+
+require(qgraph)
+qgraph(tab.Pthee.ii$tablarelacionsupera)
+
+## Ojo. Aquí hay una arista entre ai y aj si el flujo neto de ai es mejor que el 
+# de aj. No es igual que en el PI.
+
+## ordenacion final promethee 2:
+order(tab.Pthee.ii$vflujos.netos,decreasing=TRUE)
+
+
+#se puede hacer todo igual con lo de las medias, y solo varia en añadir al final lo de med
+
+
+
+
 
